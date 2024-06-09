@@ -5,16 +5,16 @@ fos_rest:
   routing_loader: false
   format_listener:
     rules:
-      - {
-          path: ^/api/,
-          priorities: [html, json, xml],
-          fallback_format: ~,
-          prefer_extension: true,
-        }
+      # - {
+      #     path: ^/api/,
+      #     priorities: [html, json, xml],
+      #     fallback_format: ~,
+      #     prefer_extension: true,
+      #   }
       - {
           path: "^/",
-          priorities: ["html", "*/*"],
-          fallback_format: html,
+          priorities: ["html", json, xml, "*/*"],
+          fallback_format: ~,
           prefer_extension: true,
         }
 #    view:
